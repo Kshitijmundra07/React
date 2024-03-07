@@ -15,6 +15,7 @@ function App() {
   const options = Object.keys(currencyInfo)
 
   const swap = () => {
+    
     setFrom(to)
     setTo(from)
     setConvertedAmount(amount)
@@ -29,7 +30,7 @@ function App() {
     <div
         className="w-full h-screen flex flex-wrap justify-center items-center bg-cover bg-no-repeat"
         style={{
-            backgroundImage: `url('https://images.pexels.com/photos/3532540/pexels-photo-3532540.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2')`,
+            backgroundImage: `url('https://winiesstudentworld.com/wp-content/uploads/2023/03/image.jpeg')`,
         }}
     >
         <div className="w-full">
@@ -46,7 +47,7 @@ function App() {
                             label="From"
                             amount={amount}
                             currencyOptions={options}
-                            onCurrencyChange={(currency) => setAmount(amount)}
+                            onCurrencyChange={(currency) => setFrom(currency)}
                             selectCurrency={from}
                             onAmountChange={(amount) => setAmount(amount)}
                         />
@@ -62,11 +63,11 @@ function App() {
                     </div>
                     <div className="w-full mt-1 mb-4">
                         <InputBox
-                            label="To"
+                            label="To" 
                             amount={convertedAmount}
                             currencyOptions={options}
                             onCurrencyChange={(currency) => setTo(currency)}
-                            selectCurrency={from}
+                            selectCurrency={to}
                             amountDisable
                         />
                     </div>
